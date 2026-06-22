@@ -1,7 +1,7 @@
 import SwiftUI
 
 @main
-struct ClaudeUsageWidgetApp: App {
+struct AIUsageWidgetApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()

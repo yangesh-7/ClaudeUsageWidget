@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		A1B2C3D42F700001000000AA /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1B2C3D32F700001000000AA /* WidgetKit.framework */; };
 		A1B2C3D62F700001000000AA /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1B2C3D52F700001000000AA /* SwiftUI.framework */; };
-		A1B2C3E72F700002000000AA /* ClaudeUsageWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = A1B2C3D12F700001000000AA /* ClaudeUsageWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		A1B2C3E72F700002000000AA /* AIUsageWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = A1B2C3D12F700001000000AA /* AIUsageWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -18,7 +18,7 @@
 			containerPortal = A1B2C3B72F700000000000AA /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = A1B2C3D02F700001000000AA;
-			remoteInfo = ClaudeUsageWidgetExtension;
+			remoteInfo = AIUsageWidgetExtension;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -29,7 +29,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				A1B2C3E72F700002000000AA /* ClaudeUsageWidgetExtension.appex in Embed Foundation Extensions */,
+				A1B2C3E72F700002000000AA /* AIUsageWidgetExtension.appex in Embed Foundation Extensions */,
 			);
 			name = "Embed Foundation Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -37,34 +37,34 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		A1B2C3BF2F700000000000AA /* ClaudeUsageWidget.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ClaudeUsageWidget.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		A1B2C3D12F700001000000AA /* ClaudeUsageWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ClaudeUsageWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		A1B2C3BF2F700000000000AA /* AIUsageWidget.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AIUsageWidget.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A1B2C3D12F700001000000AA /* AIUsageWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = AIUsageWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1B2C3D32F700001000000AA /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		A1B2C3D52F700001000000AA /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		A1B2C3E82F700002000000AA /* Exceptions for "ClaudeUsageWidgetExtension" folder in "ClaudeUsageWidgetExtension" target */ = {
+		A1B2C3E82F700002000000AA /* Exceptions for "AIUsageWidgetExtension" folder in "AIUsageWidgetExtension" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				Info.plist,
 			);
-			target = A1B2C3D02F700001000000AA /* ClaudeUsageWidgetExtension */;
+			target = A1B2C3D02F700001000000AA /* AIUsageWidgetExtension */;
 		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		A1B2C3C12F700000000000AA /* ClaudeUsageWidget */ = {
+		A1B2C3C12F700000000000AA /* AIUsageWidget */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = ClaudeUsageWidget;
+			path = AIUsageWidget;
 			sourceTree = "<group>";
 		};
-		A1B2C3D72F700001000000AA /* ClaudeUsageWidgetExtension */ = {
+		A1B2C3D72F700001000000AA /* AIUsageWidgetExtension */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
-				A1B2C3E82F700002000000AA /* Exceptions for "ClaudeUsageWidgetExtension" folder in "ClaudeUsageWidgetExtension" target */,
+				A1B2C3E82F700002000000AA /* Exceptions for "AIUsageWidgetExtension" folder in "AIUsageWidgetExtension" target */,
 			);
-			path = ClaudeUsageWidgetExtension;
+			path = AIUsageWidgetExtension;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -92,8 +92,8 @@
 		A1B2C3B62F700000000000AA = {
 			isa = PBXGroup;
 			children = (
-				A1B2C3C12F700000000000AA /* ClaudeUsageWidget */,
-				A1B2C3D72F700001000000AA /* ClaudeUsageWidgetExtension */,
+				A1B2C3C12F700000000000AA /* AIUsageWidget */,
+				A1B2C3D72F700001000000AA /* AIUsageWidgetExtension */,
 				A1B2C3D22F700001000000AA /* Frameworks */,
 				A1B2C3C02F700000000000AA /* Products */,
 			);
@@ -102,8 +102,8 @@
 		A1B2C3C02F700000000000AA /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				A1B2C3BF2F700000000000AA /* ClaudeUsageWidget.app */,
-				A1B2C3D12F700001000000AA /* ClaudeUsageWidgetExtension.appex */,
+				A1B2C3BF2F700000000000AA /* AIUsageWidget.app */,
+				A1B2C3D12F700001000000AA /* AIUsageWidgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -120,9 +120,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		A1B2C3BE2F700000000000AA /* ClaudeUsageWidget */ = {
+		A1B2C3BE2F700000000000AA /* AIUsageWidget */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A1B2C3CA2F700000000000AA /* Build configuration list for PBXNativeTarget "ClaudeUsageWidget" */;
+			buildConfigurationList = A1B2C3CA2F700000000000AA /* Build configuration list for PBXNativeTarget "AIUsageWidget" */;
 			buildPhases = (
 				A1B2C3BB2F700000000000AA /* Sources */,
 				A1B2C3BC2F700000000000AA /* Frameworks */,
@@ -135,18 +135,18 @@
 				A1B2C3E62F700002000000AA /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
-				A1B2C3C12F700000000000AA /* ClaudeUsageWidget */,
+				A1B2C3C12F700000000000AA /* AIUsageWidget */,
 			);
-			name = ClaudeUsageWidget;
+			name = AIUsageWidget;
 			packageProductDependencies = (
 			);
-			productName = ClaudeUsageWidget;
-			productReference = A1B2C3BF2F700000000000AA /* ClaudeUsageWidget.app */;
+			productName = AIUsageWidget;
+			productReference = A1B2C3BF2F700000000000AA /* AIUsageWidget.app */;
 			productType = "com.apple.product-type.application";
 		};
-		A1B2C3D02F700001000000AA /* ClaudeUsageWidgetExtension */ = {
+		A1B2C3D02F700001000000AA /* AIUsageWidgetExtension */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A1B2C3E92F700002000000AA /* Build configuration list for PBXNativeTarget "ClaudeUsageWidgetExtension" */;
+			buildConfigurationList = A1B2C3E92F700002000000AA /* Build configuration list for PBXNativeTarget "AIUsageWidgetExtension" */;
 			buildPhases = (
 				A1B2C3CD2F700001000000AA /* Sources */,
 				A1B2C3CE2F700001000000AA /* Frameworks */,
@@ -157,13 +157,13 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				A1B2C3D72F700001000000AA /* ClaudeUsageWidgetExtension */,
+				A1B2C3D72F700001000000AA /* AIUsageWidgetExtension */,
 			);
-			name = ClaudeUsageWidgetExtension;
+			name = AIUsageWidgetExtension;
 			packageProductDependencies = (
 			);
-			productName = ClaudeUsageWidgetExtension;
-			productReference = A1B2C3D12F700001000000AA /* ClaudeUsageWidgetExtension.appex */;
+			productName = AIUsageWidgetExtension;
+			productReference = A1B2C3D12F700001000000AA /* AIUsageWidgetExtension.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
@@ -184,7 +184,7 @@
 					};
 				};
 			};
-			buildConfigurationList = A1B2C3BA2F700000000000AA /* Build configuration list for PBXProject "ClaudeUsageWidget" */;
+			buildConfigurationList = A1B2C3BA2F700000000000AA /* Build configuration list for PBXProject "AIUsageWidget" */;
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -198,8 +198,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				A1B2C3BE2F700000000000AA /* ClaudeUsageWidget */,
-				A1B2C3D02F700001000000AA /* ClaudeUsageWidgetExtension */,
+				A1B2C3BE2F700000000000AA /* AIUsageWidget */,
+				A1B2C3D02F700001000000AA /* AIUsageWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -241,7 +241,7 @@
 /* Begin PBXTargetDependency section */
 		A1B2C3E62F700002000000AA /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = A1B2C3D02F700001000000AA /* ClaudeUsageWidgetExtension */;
+			target = A1B2C3D02F700001000000AA /* AIUsageWidgetExtension */;
 			targetProxy = A1B2C3E52F700002000000AA /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -370,17 +370,17 @@
 				CODE_SIGNING_REQUIRED = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 3X24MXYF75;
 				ENABLE_APP_SANDBOX = NO;
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SELECTED_FILES = readonly;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = ClaudeUsageWidget/Info.plist;
+				INFOPLIST_FILE = AIUsageWidget/Info.plist;
 				INFOPLIST_KEY_NSAppTransportSecurity_NSAllowsArbitraryLoads = YES;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 15.0;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "dev.huan.ClaudeUsageWidget";
+				PRODUCT_BUNDLE_IDENTIFIER = com.yangesh.AIUsageWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 				SUPPORTED_PLATFORMS = macosx;
@@ -399,17 +399,17 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 3X24MXYF75;
 				ENABLE_APP_SANDBOX = NO;
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SELECTED_FILES = readonly;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = ClaudeUsageWidget/Info.plist;
+				INFOPLIST_FILE = AIUsageWidget/Info.plist;
 				INFOPLIST_KEY_NSAppTransportSecurity_NSAllowsArbitraryLoads = YES;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 15.0;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "dev.huan.ClaudeUsageWidget";
+				PRODUCT_BUNDLE_IDENTIFIER = com.yangesh.AIUsageWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 				SUPPORTED_PLATFORMS = macosx;
@@ -428,13 +428,14 @@
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGNING_ALLOWED = YES;
 				CODE_SIGNING_REQUIRED = YES;
-				CODE_SIGN_ENTITLEMENTS = ClaudeUsageWidgetExtension/ClaudeUsageWidgetExtension.entitlements;
+				CODE_SIGN_ENTITLEMENTS = AIUsageWidgetExtension/AIUsageWidgetExtension.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 3X24MXYF75;
 				ENABLE_APP_SANDBOX = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = ClaudeUsageWidgetExtension/Info.plist;
+				INFOPLIST_FILE = AIUsageWidgetExtension/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Claude Usage";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -444,7 +445,7 @@
 				);
 				MACOSX_DEPLOYMENT_TARGET = 15.0;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "dev.huan.ClaudeUsageWidget.WidgetExtension";
+				PRODUCT_BUNDLE_IDENTIFIER = com.yangesh.AIUsageWidget.WidgetExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
@@ -461,13 +462,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
-				CODE_SIGN_ENTITLEMENTS = ClaudeUsageWidgetExtension/ClaudeUsageWidgetExtension.entitlements;
+				CODE_SIGN_ENTITLEMENTS = AIUsageWidgetExtension/AIUsageWidgetExtension.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 3X24MXYF75;
 				ENABLE_APP_SANDBOX = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = ClaudeUsageWidgetExtension/Info.plist;
+				INFOPLIST_FILE = AIUsageWidgetExtension/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Claude Usage";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -477,7 +479,7 @@
 				);
 				MACOSX_DEPLOYMENT_TARGET = 15.0;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "dev.huan.ClaudeUsageWidget.WidgetExtension";
+				PRODUCT_BUNDLE_IDENTIFIER = com.yangesh.AIUsageWidget.WidgetExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
@@ -493,7 +495,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		A1B2C3BA2F700000000000AA /* Build configuration list for PBXProject "ClaudeUsageWidget" */ = {
+		A1B2C3BA2F700000000000AA /* Build configuration list for PBXProject "AIUsageWidget" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A1B2C3C82F700000000000AA /* Debug */,
@@ -502,7 +504,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A1B2C3CA2F700000000000AA /* Build configuration list for PBXNativeTarget "ClaudeUsageWidget" */ = {
+		A1B2C3CA2F700000000000AA /* Build configuration list for PBXNativeTarget "AIUsageWidget" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A1B2C3CB2F700000000000AA /* Debug */,
@@ -511,7 +513,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A1B2C3E92F700002000000AA /* Build configuration list for PBXNativeTarget "ClaudeUsageWidgetExtension" */ = {
+		A1B2C3E92F700002000000AA /* Build configuration list for PBXNativeTarget "AIUsageWidgetExtension" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A1B2C3EA2F700002000000AA /* Debug */,

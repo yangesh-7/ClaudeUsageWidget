@@ -8,8 +8,13 @@
 	<true/>
 	<key>com.apple.security.temporary-exception.files.home-relative-path.read-only</key>
 	<array>
-		<string>/.claude/claude-usage-widget.json</string>
-		<string>/.claude/</string>
+		<string>/.codex/</string>
+		<string>/.codex/history.jsonl</string>
+		<string>/.codex/session_index.jsonl</string>
+		<string>/.codex/sessions/</string>
+		<string>/.gemini/antigravity-cli/</string>
+		<string>/.gemini/antigravity-cli/history.jsonl</string>
+		<string>/.gemini/antigravity-cli/brain/</string>
 	</array>
 </dict>
 </plist>
