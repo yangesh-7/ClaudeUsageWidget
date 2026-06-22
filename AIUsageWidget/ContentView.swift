@@ -22,99 +22,142 @@ struct ContentView: View {
     }
     
     var body: some View {
-        ScrollView {
-            VStack(spacing: 20) {
-                // MARK: - Header
-                HStack(spacing: 12) {
-                    Image(systemName: "chart.bar.fill")
-                        .font(.system(size: 32))
-                        .foregroundStyle(.linearGradient(
-                            colors: [.blue, .purple],
-                            startPoint: .topLeading,
-                            endPoint: .bottomTrailing
-                        ))
+        ZStack {
+            // MARK: - Dark Background Gradient
+            LinearGradient(
+                colors: [Color.black, Color(white: 0.05)],
+                startPoint: .topLeading,
+                endPoint: .bottomTrailing
+            )
+            .ignoresSafeArea()
+            .overlay(
+                Circle()
+                    .fill(Color.blue.opacity(0.05))
+                    .frame(width: 400, height: 400)
+                    .blur(radius: 80)
+                    .offset(x: -150, y: -150)
+            )
+            .overlay(
+                Circle()
+                    .fill(Color.purple.opacity(0.05))
+                    .frame(width: 300, height: 300)
+                    .blur(radius: 60)
+                    .offset(x: 200, y: 150)
+            )
+            
+            ScrollView(showsIndicators: false) {
+                VStack(spacing: 24) {
+                    // MARK: - Header
+                    HStack(spacing: 16) {
+                        Image(systemName: "chart.bar.fill")
+                            .font(.system(size: 36, weight: .bold))
+                            .foregroundStyle(
+                                .linearGradient(
+                                    colors: [.blue, .purple],
+                                    startPoint: .topLeading,
+                                    endPoint: .bottomTrailing
+                                )
+                            )
+                            .shadow(color: .purple.opacity(0.3), radius: 5, x: 0, y: 3)
+                        
+                        VStack(alignment: .leading, spacing: 2) {
+                            Text("AI Usage Tracker")
+                                .font(.system(size: 28, weight: .bold, design: .rounded))
+                                .foregroundStyle(.primary)
+                            Text("Codex + Antigravity")
+                                .font(.headline)
+                                .foregroundColor(.secondary)
+                        }
+                        Spacer()
+                    }
+                    .padding(.bottom, 8)
                     
-                    VStack(alignment: .leading, spacing: 2) {
-                        Text("AI Usage Tracker")
-                            .font(.title.bold())
-                        Text("Codex + Antigravity")
-                            .font(.subheadline)
-                            .foregroundColor(.secondary)
+                    // MARK: - Info Section
+                    GlassCard {
+                        VStack(alignment: .leading, spacing: 12) {
+                            Label("About", systemImage: "info.circle.fill")
+                                .font(.headline)
+                                .foregroundStyle(.blue)
+                            
+                            Text("This widget seamlessly reads your local AI session data in the background. No configuration needed.")
+                                .font(.subheadline)
+                                .foregroundColor(.primary.opacity(0.8))
+                        }
                     }
                     
-                    Spacer()
-                }
-                .padding(.bottom, 4)
-                
-                // MARK: - Info Section
-                GroupBox {
-                    HStack(spacing: 10) {
-                        Image(systemName: "info.circle.fill")
-                            .foregroundColor(.blue)
-                            .font(.title3)
-                        
-                        Text("This widget automatically reads your local Codex and Antigravity session data. No configuration needed!")
-                            .font(.callout)
-                            .foregroundColor(.secondary)
+                    // MARK: - Status Cards
+                    GlassCard {
+                        VStack(alignment: .leading, spacing: 16) {
+                            Label("Data Source Status", systemImage: "checkmark.shield.fill")
+                                .font(.headline)
+                                .foregroundStyle(.primary)
+                            
+                            VStack(spacing: 12) {
+                                statusRow(
+                                    name: "Codex",
+                                    icon: "CodexLogo",
+                                    detected: codexHistoryExists
+                                )
+                                
+                                Rectangle()
+                                    .fill(Color.primary.opacity(0.1))
+                                    .frame(height: 1)
+                                
+                                statusRow(
+                                    name: "Antigravity",
+                                    icon: "AntigravityLogo",
+                                    detected: antigravityHistoryExists
+                                )
+                            }
+                        }
                     }
-                    .padding(.vertical, 4)
-                } label: {
-                    Label("About", systemImage: "questionmark.circle")
-                        .font(.headline)
-                }
-                
-                // MARK: - Status Cards
-                GroupBox {
-                    VStack(spacing: 12) {
-                        statusRow(
-                            name: "Codex",
-                            icon: "CodexLogo",
-                            detected: codexHistoryExists
+                    
+                    // MARK: - Paths Monitored
+                    GlassCard {
+                        VStack(alignment: .leading, spacing: 16) {
+                            Label("Paths Monitored", systemImage: "folder.badge.gearshape.fill")
+                                .font(.headline)
+                                .foregroundStyle(.primary)
+                            
+                            VStack(alignment: .leading, spacing: 12) {
+                                pathRow(label: "Codex history", path: codexHistoryPath)
+                                Rectangle()
+                                    .fill(Color.primary.opacity(0.1))
+                                    .frame(height: 1)
+                                pathRow(label: "Antigravity history", path: antigravityHistoryPath)
+                            }
+                        }
+                    }
+                    
+                    // MARK: - Refresh Button
+                    Button(action: {
+                        withAnimation {
+                            WidgetCenter.shared.reloadTimelines(ofKind: "AIUsageWidget")
+                            checkDataSources()
+                        }
+                    }) {
+                        HStack(spacing: 8) {
+                            Image(systemName: "arrow.triangle.2.circlepath")
+                            Text("Refresh Widgets")
+                        }
+                        .font(.system(size: 13, weight: .medium, design: .rounded))
+                        .padding(.horizontal, 20)
+                        .padding(.vertical, 8)
+                        .background(Color.white.opacity(0.1))
+                        .foregroundColor(.white)
+                        .clipShape(Capsule())
+                        .overlay(
+                            Capsule().stroke(Color.white.opacity(0.2), lineWidth: 1)
                         )
-                        
-                        Divider()
-                        
-                        statusRow(
-                            name: "Antigravity",
-                            icon: "AntigravityLogo",
-                            detected: antigravityHistoryExists
-                        )
                     }
-                    .padding(.vertical, 4)
-                } label: {
-                    Label("Data Source Status", systemImage: "checkmark.shield")
-                        .font(.headline)
+                    .buttonStyle(.plain)
+                    .padding(.top, 8)
                 }
-                
-                // MARK: - Paths Monitored
-                GroupBox {
-                    VStack(alignment: .leading, spacing: 8) {
-                        pathRow(label: "Codex history", path: codexHistoryPath)
-                        Divider()
-                        pathRow(label: "Antigravity history", path: antigravityHistoryPath)
-                    }
-                    .padding(.vertical, 4)
-                } label: {
-                    Label("Paths Monitored", systemImage: "folder.badge.gearshape")
-                        .font(.headline)
-                }
-                
-                // MARK: - Refresh Button
-                Button(action: {
-                    WidgetCenter.shared.reloadTimelines(ofKind: "AIUsageWidget")
-                    checkDataSources()
-                }) {
-                    Label("Refresh Widget", systemImage: "arrow.clockwise")
-                        .font(.body.bold())
-                        .frame(maxWidth: .infinity)
-                        .padding(.vertical, 10)
-                }
-                .buttonStyle(.borderedProminent)
-                .tint(.blue)
+                .padding(32)
             }
-            .padding(24)
         }
-        .frame(minWidth: 500, minHeight: 350)
+        .frame(minWidth: 500, minHeight: 480)
+        .preferredColorScheme(.dark)
         .onAppear {
             checkDataSources()
         }
@@ -127,11 +170,12 @@ struct ContentView: View {
             Image(icon)
                 .resizable()
                 .scaledToFit()
-                .frame(width: 20, height: 20)
-                .frame(width: 28)
+                .frame(width: 24, height: 24)
+                .frame(width: 32)
+                .shadow(color: .black.opacity(0.1), radius: 2, x: 0, y: 1)
             
             Text(name)
-                .font(.body.weight(.medium))
+                .font(.body.weight(.semibold))
             
             Spacer()
             
@@ -141,16 +185,16 @@ struct ContentView: View {
                     .font(.title3)
                 
                 Text(detected ? "Detected" : "Not Found")
-                    .font(.callout)
+                    .font(.subheadline.weight(.medium))
                     .foregroundColor(detected ? .green : .red)
             }
         }
     }
     
     private func pathRow(label: String, path: String) -> some View {
-        VStack(alignment: .leading, spacing: 3) {
+        VStack(alignment: .leading, spacing: 4) {
             Text(label)
-                .font(.callout.weight(.medium))
+                .font(.subheadline.weight(.semibold))
                 .foregroundColor(.primary)
             
             Text(path)
@@ -165,6 +209,28 @@ struct ContentView: View {
     private func checkDataSources() {
         codexHistoryExists = FileManager.default.fileExists(atPath: codexHistoryPath)
         antigravityHistoryExists = FileManager.default.fileExists(atPath: antigravityHistoryPath)
+    }
+}
+
+// MARK: - Glassmorphism Card
+struct GlassCard<Content: View>: View {
+    let content: Content
+    
+    init(@ViewBuilder content: () -> Content) {
+        self.content = content()
+    }
+    
+    var body: some View {
+        content
+            .frame(maxWidth: .infinity, alignment: .leading)
+            .padding(20)
+            .background(.regularMaterial)
+            .cornerRadius(20)
+            .overlay(
+                RoundedRectangle(cornerRadius: 20)
+                    .stroke(Color.primary.opacity(0.1), lineWidth: 1)
+            )
+            .shadow(color: Color.black.opacity(0.1), radius: 15, x: 0, y: 5)
     }
 }
 
